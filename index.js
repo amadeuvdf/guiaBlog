@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 //session
 app.use(session({
     secret: "password",
-    cookie: {maxAge: 30000}
+    cookie: {maxAge: 1800000}
 }));
 
 // Redis -> armazenamento de seções 
