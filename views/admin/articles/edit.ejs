@@ -14,6 +14,7 @@
             <form method="POST" action="/articles/update">
                 <input name="id" type="hidden" value="<%= article.id %>">
                 <input class="form-control" type="text" name="title" placeholder="Edite o titulo do artigo" value="<%= article.title %> " > <br>
+                <input class="form-control" type="text" name="author" value="<%= article.author %> "> <br>
                 <textarea class="form-control" name="body" id="article" rows="21" ></textarea>
                 <label>Categoria</label>
                 <select name="category" class="form-control">
@@ -48,7 +49,7 @@
         ],
         toolbar: 'undo redo | styleselect | bold italic | aligncenter alignright alignjustify alignleft | link image | code',
         init_instance_callback: () =>{
-            tinymce.get("article").setContent($("#content").html())
+            tinymce.get("article").setContent("<%- article.body %> ") //por alguma razão assim funciona -> froma anterior setContent($("#content").html()) 
         }
         
     })

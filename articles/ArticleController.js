@@ -23,6 +23,7 @@ router.get("/admin/articles/new",adminAuth, (req, res) => {
 
 router.post("/articles/save",adminAuth, (req, res) => {
     var title = req.body.title;
+    var author = req.body.author;
     var body = req.body.body;
     var category = parseInt(req.body.category);
 
@@ -33,6 +34,7 @@ router.post("/articles/save",adminAuth, (req, res) => {
             title: title,
             slug: slugify(title),
             body: body,
+            author: author,
             categoryId: category
         }).then(()=>{
             res.redirect("/admin/articles");

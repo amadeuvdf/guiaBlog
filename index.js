@@ -6,10 +6,13 @@ const connection = require('./database/database');
 
 const categoriesController = require('./categories/CategoriesController');
 const ArticleController = require('./articles/ArticleController');
+const CommentController = require("./comments/CommentController");
 const UserController = require('./user/UserController');
 
 const Article = require("./articles/Article");
 const Category = require("./categories/Category");
+const Comments = require('./comments/Comment.js');
+//const migrations = require("./migrations/20201127182409-migracao")
 const User = require("./user/User");
 
 //view engine
@@ -45,6 +48,7 @@ app.use("/", ArticleController);
 
 app.use("/", UserController);
 
+app.use("/", CommentController);
 
 
 app.get('/', function(req, res){

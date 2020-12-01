@@ -13,7 +13,7 @@
         </div>
 
         <div class="card-body" style="width: 42rem;">
-                <form class="card w-75">
+                <form method="POST" action="/comment/save" class="card w-75">
                     <div class="card-header">
                         <label for="exampleFormControlTextarea1">Faça um comentario: </label>
                     </div> 
@@ -22,10 +22,11 @@
                             <div class="input-group-prepend">
                             <span class="input-group-text">Seu nome</span>
                             </div>
-                            <input type="text" aria-label="First name" class="form-control">
+                            <input type="text" name="name" aria-label="First name" class="form-control">
+                            <input type="hidden" name="article" value="<%= article.id %> ">
                         </div>
                         <br>
-                        <textarea class="form-control"  rows="2"></textarea>
+                        <textarea class="form-control" name="body" rows="2"></textarea>
                         <br>
                         <button class="btn btn-success">Comentar</button>
                     </div>
